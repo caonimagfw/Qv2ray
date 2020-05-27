@@ -309,7 +309,7 @@ if(APPLE)
     add_custom_command(TARGET qv2ray POST_BUILD
         COMMAND macdeployqt ${CMAKE_BINARY_DIR}/qv2ray.app
         )
-    set(APPS "\${CMAKE_INSTALL_PREFIX}/qv2ray.app")
+    set(APPS "${CMAKE_BINARY_DIR}/qv2ray.app")
     include(cmake/deployment.cmake)
 endif()
 
@@ -342,6 +342,6 @@ if(WIN32)
         COMMAND windeployqt ${CMAKE_BINARY_DIR}/qv2ray.exe --compiler-runtime --verbose 2 --dir ${CMAKE_BINARY_DIR}/winqt/
         )
     install(DIRECTORY ${CMAKE_BINARY_DIR}/winqt/ DESTINATION .)
-    set(APPS "\$ENV{DESTDIR}\${CMAKE_INSTALL_PREFIX}/qv2ray.exe")
+    set(APPS "${CMAKE_INSTALL_PREFIX}/qv2ray.exe")
     include(cmake/deployment.cmake)
 endif()
