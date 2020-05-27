@@ -309,7 +309,7 @@ if(APPLE)
     add_custom_command(TARGET qv2ray POST_BUILD
         COMMAND macdeployqt ${CMAKE_BINARY_DIR}/qv2ray.app
         )
-    set(APPS "${CMAKE_BINARY_DIR}/qv2ray.app")
+    set(APPS "${CMAKE_INSTALL_PREFIX}/qv2ray.app")
     include(cmake/deployment.cmake)
 endif()
 

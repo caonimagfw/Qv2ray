@@ -23,7 +23,7 @@ message(STATUS "APPS: ${APPS}")
 message(STATUS "QT_PLUGINS: ${QT_PLUGINS}")
 message(STATUS "DIRS: ${DIRS}")
 
-INSTALL(CODE "
+install(CODE "
    include(BundleUtilities)
    fixup_bundle(\"${APPS}\"   \"\"   \"${DIRS}\")
    " COMPONENT Runtime)
